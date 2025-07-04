@@ -3,3 +3,4 @@ node_modules
 .next
 /src/parser/ontario/output.json
 /src/parser/ontario/source.html
+.env*
