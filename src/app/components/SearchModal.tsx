@@ -1,7 +1,6 @@
 'use client';
 
 import React, { useState, useEffect, useRef, useCallback } from 'react';
-import { searchProduceItems } from '@/app/lib/db';
 import { ProduceItem } from '@/types/produce';
 import ProduceCard from './ProduceCard';
 import { SearchIcon, CloseIcon } from './Icons';
@@ -10,9 +9,10 @@ import '@/app/styles/SearchModal.scss';
 interface SearchModalProps {
   isOpen: boolean;
   onClose: () => void;
+  searchProduceItems: (searchTerm: string) => Promise<ProduceItem[]>;
 }
 
-const SearchModal: React.FC<SearchModalProps> = ({ isOpen, onClose }) => {
+const SearchModal: React.FC<SearchModalProps> = ({ isOpen, onClose, searchProduceItems }) => {
   const [searchTerm, setSearchTerm] = useState('');
   const [searchResults, setSearchResults] = useState<ProduceItem[]>([]);
   const [isLoading, setIsLoading] = useState(false);

@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import '@/app/styles/Page.scss';
 import Home from '@/app/pages/Home';
+import { searchProduceItems, getProduceItemsByMonth } from '@/app/lib/db';
 
 export const metadata: Metadata = {
   title: 'Ripe - Seasonal Produce Guide | Ontario',
@@ -17,40 +18,9 @@ export const metadata: Metadata = {
 
 export default async function Page() {
   return (
-    <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "WebSite",
-            "name": "Ripe",
-            "description": "Seasonal produce guide for Ontario",
-            "url": "https://ripe.com",
-            "potentialAction": {
-              "@type": "SearchAction",
-              "target": "https://ripe.com/search?q={search_term_string}",
-              "query-input": "required name=search_term_string"
-            }
-          })
-        }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "Organization",
-            "name": "Ripe",
-            "url": "https://ripe.com",
-            "logo": "https://ripe.com/logo.png",
-            "sameAs": [
-              "https://twitter.com/ripe"
-            ]
-          })
-        }}
-      />
-      <Home />
-    </>
+    <Home 
+      searchProduceItems={searchProduceItems}
+      getProduceItemsByMonth={getProduceItemsByMonth}
+    />
   )
 }

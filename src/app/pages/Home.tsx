@@ -1,32 +1,31 @@
 'use client';
 
-import { getProduceItemsByMonth } from '@/app/lib/db';
 import MonthDropdown from '@/app/components/MonthDropdown';
 import ProduceCard from '@/app/components/ProduceCard';
 import SearchModal from '@/app/components/SearchModal';
 import { SearchIcon, LocationIcon } from '@/app/components/Icons';
 import { ProduceItem } from '@/types/produce';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useCallback } from 'react';
 import Image from 'next/image';
 
-export default function Home() {
+export default function Home({ searchProduceItems, getProduceItemsByMonth }: { searchProduceItems: (searchTerm: string) => Promise<ProduceItem[]>, getProduceItemsByMonth: (month: number) => Promise<ProduceItem[]> }) {
     const currentMonth = new Date().getMonth() + 1;
     const [produceItems, setProduceItems] = useState<ProduceItem[]>([]);
     const [month, setMonth] = useState(currentMonth);
     const [isSearchOpen, setIsSearchOpen] = useState(false);
 
-    const fetchProduceItems = async (month: number) => {
+    const fetchProduceItems = useCallback(async (month: number) => {
         const produceItems = await getProduceItemsByMonth(month);
         setProduceItems(produceItems);
-    };
+    }, [getProduceItemsByMonth]);
     
     useEffect(() => {
         fetchProduceItems(currentMonth);
-    }, [currentMonth]);
+    }, [currentMonth, fetchProduceItems]);
 
     useEffect(() => {
         fetchProduceItems(month);
-    }, [month]);
+    }, [month, fetchProduceItems]);
 
     return (
       <main className='container'>
@@ -82,6 +81,7 @@ export default function Home() {
         <SearchModal 
           isOpen={isSearchOpen} 
           onClose={() => setIsSearchOpen(false)} 
+          searchProduceItems={searchProduceItems}
         />
       </main>
     );
