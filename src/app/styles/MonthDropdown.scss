@@ -1,0 +1,28 @@
+@import '@/app/styles/variables.scss';
+
+.month-dropdown {
+    margin-right: 1rem;
+    border: none;
+    outline: none;
+    background: none;
+    color: $primary-text;
+    font-size: 18px;
+    letter-spacing: 0.6px;
+    padding-top: 0;
+    padding-bottom: 0;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+    border-bottom: 1px solid #888;
+    text-align: center;
+    margin-top: 1px;
+    padding-bottom: 4px;
+    padding-top: 4px;
+    font-weight: 800;
+  }
+
+.reset-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    font-weight: 800;
+}

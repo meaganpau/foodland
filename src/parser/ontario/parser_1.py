@@ -86,6 +86,15 @@ def scrape_availability_guide():
         name = name.replace("\n", "").replace("?", "").strip()
         while "  " in name:
             name = name.replace("  ", " ")
+        
+        # Replace "Onions (Green)" with "Green Onions"
+        if name == "Onions (Green)":
+            name = "Green Onions"
+
+        # Replace "Onions (Red)" with "Red Onions"
+        if name == "Onions (Red)":
+            name = "Red Onions"
+            
         key = name.lower()
 
         # Get all badges (month or year-round)

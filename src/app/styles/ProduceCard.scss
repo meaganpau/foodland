@@ -1,0 +1,79 @@
+@import '@/app/styles/variables.scss';
+
+.produceCard {
+  background: $card-background;
+  border-radius: 16px;
+  overflow: hidden;
+  position: relative;
+  border: 1px solid $card-border;
+  width: 100%;
+
+    @media (max-width: 640px) {
+      max-width: 240px;
+      margin: 0 auto;
+      text-align: center;
+    }
+}
+
+.cardContent {
+  padding: 1.5rem;
+}
+
+.titleSection {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+
+  @media (max-width: 640px) {
+    justify-content: center;
+  }
+}
+
+.titleInfo {
+  h3 {
+    font-size: 1.125rem;
+    font-weight: 800;
+    color: $primary-text;
+    margin: 0.2rem 0 0.25rem;
+    line-height: 1.4;
+  }
+}
+
+.availabilitySection {
+  h4 {
+    font-size: 12px;
+    color: $tertiary-text;
+    margin: 0.35rem 0 .35rem;
+    text-transform: uppercase;
+    letter-spacing: 0.65px;    
+    margin-bottom: 0.5rem;
+  }
+
+  .availabilityContent {
+    background: #fff;
+    border-radius: 8px;
+    padding: 0.25rem .75rem;
+    border: 1px solid #e2e8f0;
+  }
+  
+  p {
+    font-size: 0.875rem;
+    color: $quaternary-text;
+    line-height: 1.5;
+    margin: 0;
+    letter-spacing: 0.35px;
+  }
+}
+
+// Responsive design
+@media (max-width: 640px) {
+  .cardContent {
+    padding: 1rem;
+  }
+  
+  .cardHeader {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+}
