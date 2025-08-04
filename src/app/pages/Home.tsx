@@ -58,7 +58,7 @@ export default function Home() {
           
           <section>
             <div className='sub-header'>
-              <p className='month-container'>What&apos;s available in <MonthDropdown month={month} setMonth={setMonth} currentMonthSelected={currentMonth === month} /></p>
+              <div className='month-container'>What&apos;s available in <MonthDropdown month={month} setMonth={setMonth} currentMonthSelected={currentMonth === month} /></div>
               <div className='location'>
                 <LocationIcon width={16} height={16} />
                 Ontario
