@@ -1,6 +1,6 @@
 'use client';
 
-import React from 'react';
+import React, { useState } from 'react';
 import { ProduceItem } from '@/types/produce';
 import { getMonthNumber, getMonthShortName } from '@/app/helper';
 import Image from 'next/image';
@@ -13,6 +13,8 @@ interface ProduceCardProps {
 }
 
 const ProduceCard: React.FC<ProduceCardProps> = ({ produce, className = '' }) => {
+  const [imageError, setImageError] = useState(false);
+  
   const formatAvailability = (availability: string[]) => {
     return availability
       .map(getMonthNumber)
@@ -20,8 +22,20 @@ const ProduceCard: React.FC<ProduceCardProps> = ({ produce, className = '' }) =>
       .map(getMonthShortName)
       .join(', ')
   };
-  // nextjs public image url
-  const imageUrl = `/new/${produce.name.split('(')[0].trim().replace(/\s+/g, '-')}.png`;
+  
+  // Generate image URL by cleaning the produce name
+  const generateImageUrl = (produceName: string) => {
+    // Remove parentheses and their contents, trim whitespace, convert to lowercase, replace spaces with hyphens
+    const cleanName = produceName
+      .split('(')[0] // Remove everything after first parenthesis
+      .trim()
+      .toLowerCase()
+      .replace(/\s+/g, '-');
+    
+    return `/new/${cleanName}.png`;
+  };
+
+  const imageUrl = generateImageUrl(produce.name);
 
   return (
     <div className={`produceCard ${className}`}>
@@ -29,7 +43,13 @@ const ProduceCard: React.FC<ProduceCardProps> = ({ produce, className = '' }) =>
         <div className='cardHeader'>
           <div className='titleSection'>
             <div className='titleInfo'>
-              <Image src={imageUrl} alt={produce.name} width={100} height={100} />
+              <Image 
+                src={imageError ? '/logo.png' : imageUrl} 
+                alt={produce.name} 
+                width={100} 
+                height={100}
+                onError={() => setImageError(true)}
+              />
               <h3>{produce.name}</h3>
             </div>
           </div>
