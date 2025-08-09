@@ -76,7 +76,7 @@ const SearchModal: React.FC<SearchModalProps> = ({ isOpen, onClose, searchProduc
 
     const debounceTimer = setTimeout(searchProduce, 200);
     return () => clearTimeout(debounceTimer);
-  }, [searchTerm]);
+  }, [searchProduceItems, searchTerm]);
 
   if (!isOpen) return null;
 
@@ -93,8 +93,9 @@ const SearchModal: React.FC<SearchModalProps> = ({ isOpen, onClose, searchProduc
               value={searchTerm}
               onChange={(e) => setSearchTerm(e.target.value)}
               className="search-input"
+              aria-label="Search for produce by name"
             />
-            <button onClick={handleClose} className="close-button">
+            <button onClick={handleClose} className="close-button" aria-label="Close search">
               <CloseIcon width={20} height={20} />
             </button>
           </div>

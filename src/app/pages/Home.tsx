@@ -43,7 +43,7 @@ export default function Home({ searchProduceItems, getProduceItemsByMonth }: { s
               <button 
                 className="search-button"
                 onClick={() => setIsSearchOpen(true)}
-                aria-label="Search produce"
+                aria-label="Open search modal to search for produce by name"
               >
                 <SearchIcon width={18} height={18} />
                 <span>Search by produce</span>

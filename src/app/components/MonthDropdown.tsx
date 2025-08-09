@@ -16,7 +16,7 @@ export default function MonthDropdown({ month, setMonth, currentMonthSelected }:
 
   return (
     <div>
-      <select className='month-dropdown' onChange={handleMonthChange} value={month}>
+      <select className='month-dropdown' onChange={handleMonthChange} value={month} aria-label="Select a month to filter produce by">
         <option value="1">January</option>
         <option value="2">February</option>
         <option value="3">March</option>
@@ -30,7 +30,7 @@ export default function MonthDropdown({ month, setMonth, currentMonthSelected }:
         <option value="11">November</option>
         <option value="12">December</option>
       </select>
-      <button className='button reset-button' onClick={handleNowClick} disabled={currentMonthSelected}>
+      <button className='button reset-button' onClick={handleNowClick} disabled={currentMonthSelected} aria-label="Reset filter to current month">
         <ResetIcon width={10} height={10} />
         <span>Reset</span>
       </button>
