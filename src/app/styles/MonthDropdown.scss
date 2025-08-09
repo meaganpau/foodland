@@ -25,4 +25,28 @@
     align-items: center;
     gap: 4px;
     font-weight: 800;
+
+    @media (max-width: 460px) {
+      box-shadow: none;
+      background: none !important;
+      border: none;
+      padding: 0;
+      color: #888;
+
+      svg {
+        width: 15px;
+        height: 15px;
+      }
+
+      width: 15px;
+      height: 15px;
+
+      &:disabled {
+        color: #ccc;
+      }
+      
+      span {
+        display: none;
+      }
+    }
 }

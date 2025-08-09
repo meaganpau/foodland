@@ -32,7 +32,7 @@ export default function MonthDropdown({ month, setMonth, currentMonthSelected }:
       </select>
       <button className='button reset-button' onClick={handleNowClick} disabled={currentMonthSelected}>
         <ResetIcon width={10} height={10} />
-        Reset
+        <span>Reset</span>
       </button>
     </div>
   );

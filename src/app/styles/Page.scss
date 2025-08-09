@@ -61,6 +61,21 @@
       color: #374151;
       border: 1px solid rgba(0, 0, 0, 0.5);
     }
+
+    @media (max-width: 640px) {
+      border: none;
+      position: absolute;
+      right: 10px;
+      top: 20px;
+
+      &:hover {
+        border: none;
+      }
+
+      span {
+        display: none;
+      }
+    }
     
     svg {
       width: 18px;
@@ -80,7 +95,7 @@ h1 {
   font-weight: 800;
   
   @media (max-width: 640px) {
-    font-size: 1rem;
+    font-size: 1.5rem;
   }
 }
 
@@ -201,6 +216,12 @@ button {
   margin-top: 1.8rem;
   margin-bottom: 2rem;
 
+  @media (max-width: 640px) {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+
   .month {
     font-size: 1.125rem;
     font-weight: 600;
@@ -212,6 +233,10 @@ button {
     gap: 1rem;
     margin-left: 0;
     font-weight: 700;
+
+    @media (max-width: 460px) {
+      gap: 0.5rem;
+    }
   }
   
   .location {
@@ -227,3 +252,10 @@ button {
   }
 }
 
+.description {
+  @media (max-width: 640px) {
+    br {
+      display: none;
+    }
+  }
+}

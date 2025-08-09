@@ -50,7 +50,7 @@ export default function Home({ searchProduceItems, getProduceItemsByMonth }: { s
               </button>
             </div>
             <p className='description'>
-              Discover what&apos;s in season and available throughout the year.<br />
+              Discover what&apos;s in season and available throughout the year. <br />
               Support local farmers and enjoy the freshest produce at its peak.
             </p>
           </section>

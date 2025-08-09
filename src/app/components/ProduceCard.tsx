@@ -4,6 +4,7 @@ import React, { useState } from 'react';
 import { ProduceItem } from '@/types/produce';
 import { getMonthNumber, getMonthShortName } from '@/app/helper';
 import Image from 'next/image';
+import { CalendarIcon } from './Icons';
 
 import '@/app/styles/ProduceCard.scss';
 
@@ -57,6 +58,7 @@ const ProduceCard: React.FC<ProduceCardProps> = ({ produce, className = '' }) =>
         <div className='availabilitySection'>
           <h4>Available Months</h4>
           <div className='availabilityContent'>
+          <CalendarIcon width={14} height={14} className="calendar-icon" />
             <p>
               {produce.is_year_round ? 'All year' : produce.available_months?.length ? formatAvailability(produce.available_months) : 'No availability data'}
             </p>
