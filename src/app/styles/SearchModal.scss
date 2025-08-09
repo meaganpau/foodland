@@ -63,7 +63,7 @@
 }
 
 .close-button {
-  background: none;
+  background: none !important;
   border: none;
   cursor: pointer;
   padding: 6px;
@@ -72,8 +72,7 @@
   flex-shrink: 0;
   box-shadow: none;
   
-  &:hover {
-    background-color: transparent;
+  &:hover, &:focus-visible {
     color: #374151;
   }
 }

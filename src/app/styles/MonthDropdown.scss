@@ -8,16 +8,20 @@
     color: $primary-text;
     font-size: 18px;
     letter-spacing: 0.6px;
-    padding-top: 0;
-    padding-bottom: 0;
-    padding-left: 0.5rem;
-    padding-right: 0.5rem;
     border-bottom: 1px solid #888;
     text-align: center;
     margin-top: 1px;
     padding-bottom: 4px;
     padding-top: 4px;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
     font-weight: 800;
+
+    &:focus-visible { 
+      border-bottom-color: $cta-accent;
+      border-bottom-width: 2px;
+      padding-bottom: 3px;
+    }
   }
 
 .reset-button {
