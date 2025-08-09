@@ -8,20 +8,9 @@ const nunito = Nunito({
 });
 
 export const metadata: Metadata = {
-  title: {
-    default: "Ripe - Seasonal Produce Guide | Ontario",
-    template: "%s | Ripe"
-  },
+  title: "Ripe - Seasonal Produce Guide | Ontario",
   description: "Discover what's in season in Ontario. Find fresh, local produce at its peak with our comprehensive seasonal produce guide. Support local farmers and enjoy the best flavors.",
   keywords: ["seasonal produce", "Ontario", "local food", "fresh vegetables", "seasonal fruits", "farm to table", "what's in season", "produce guide"],
-  authors: [{ name: "Meagan Pau" }],
-  creator: "Meagan Pau",
-  publisher: "Meagan Pau",
-  formatDetection: {
-    email: false,
-    address: false,
-    telephone: false,
-  },
   metadataBase: new URL('https://ripe.meaganpau.com'),
   alternates: {
     canonical: '/',
@@ -40,30 +29,23 @@ export const metadata: Metadata = {
     siteName: 'Ripe',
     images: [
       {
-        url: '/logo.png',
-        width: 1200,
-        height: 630,
+        url: 'https://ripe.meaganpau.com/logo.png',
+        width: 450,
+        height: 450,
         alt: 'Ripe - Seasonal Produce Guide',
       },
     ],
   },
   twitter: {
-    card: 'summary_large_image',
+    card: 'summary',
     title: 'Ripe - Seasonal Produce Guide | Ontario',
     description: 'Discover what\'s in season in Ontario. Find fresh, local produce at its peak.',
-    images: ['/logo.png'],
+    images: ['https://ripe.meaganpau.com/logo.png'],
     creator: '@meaganpau',
   },
   robots: {
     index: true,
     follow: true,
-    googleBot: {
-      index: true,
-      follow: true,
-      'max-video-preview': -1,
-      'max-image-preview': 'large',
-      'max-snippet': -1,
-    },
   }
 };
 

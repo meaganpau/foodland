@@ -6,14 +6,6 @@ import { searchProduceItems, getProduceItemsByMonth } from '@/app/lib/db';
 export const metadata: Metadata = {
   title: 'Ripe - Seasonal Produce Guide | Ontario',
   description: 'Discover what\'s in season in Ontario this month. Find fresh, local produce at its peak with our comprehensive seasonal produce guide.',
-  openGraph: {
-    title: 'Ripe - Seasonal Produce Guide | Ontario',
-    description: 'Discover what\'s in season in Ontario this month. Find fresh, local produce at its peak.',
-  },
-  twitter: {
-    title: 'Ripe - Seasonal Produce Guide | Ontario',
-    description: 'Discover what\'s in season in Ontario this month. Find fresh, local produce at its peak.',
-  },
 };
 
 export default async function Page() {
