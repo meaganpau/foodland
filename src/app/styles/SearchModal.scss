@@ -117,15 +117,11 @@
 
 .search-results-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
   gap: 16px;
-  
-  .produceCard {
-    margin: 0;
 
-    @media (max-width: 547px) {
-      margin: 0 auto;
-    }
+  @media (min-width: 640px) {
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
   }
 }
 
