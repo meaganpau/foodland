@@ -33,8 +33,12 @@ export const metadata: Metadata = {
         width: 450,
         height: 450,
         alt: 'Ripe - Seasonal Produce Guide',
+        type: 'image/png',
       },
     ],
+  },
+  other: {
+    'og:logo': 'https://ripe.meaganpau.com/logo.png',
   },
   twitter: {
     card: 'summary',
